@@ -1,0 +1,9 @@
+CLAUDE.md
+data/raw/
+data/model/
+data/processed/
+data/plots/
+__pycache__/
+*.pyc
+.env
+*.tgz
