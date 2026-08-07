@@ -1,0 +1,31 @@
+# All tunable parameters for the image classification pipeline
+
+data:
+  dataset_url: "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
+  raw_dir: "data/raw"
+  classes: ["daisy", "dandelion", "roses"]
+  max_images_per_class: 100
+
+processing:
+  image_size: 64
+  processed_dir: "data/processed"
+  validation_split: 0.2
+
+features:
+  flatten: true
+  normalize: true
+
+training:
+  model_type: "random_forest"
+  n_estimators: 100
+  max_depth: 10
+  learning_rate: 0.1
+  batch_size: 32
+  epochs: 10
+  dropout_rate: 0.3
+  optimizer: "adam"
+  random_state: 42
+
+evaluation:
+  metrics_file: "data/metrics.json"
+  plots_dir: "data/plots"
