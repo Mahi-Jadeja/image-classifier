@@ -4,7 +4,7 @@
 **PRN:** 23070126068  
 
 ## GitHub Repository
-[https://github.com/mahi-jadeja/image_classifier](https://github.com/mahi-jadeja/image_classifier)
+[https://github.com/Mahi-Jadeja/image-classifier](https://github.com/Mahi-Jadeja/image-classifier)
 
 ---
 
