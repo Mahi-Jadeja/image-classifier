@@ -1,7 +1,7 @@
 stages:
 
   data_collection:
-    cmd: python src/data_collection.py
+    cmd: python3 src/data_collection.py
     deps:
       - src/data_collection.py
       - params.yaml
@@ -14,7 +14,7 @@ stages:
       - data/raw
 
   data_processing:
-    cmd: python src/data_processing.py
+    cmd: python3 src/data_processing.py
     deps:
       - src/data_processing.py
       - data/raw
@@ -29,7 +29,7 @@ stages:
       - data/processed/y_val.npy
 
   feature_selection:
-    cmd: python src/feature_selection.py
+    cmd: python3 src/feature_selection.py
     deps:
       - src/feature_selection.py
       - data/processed/X_train.npy
@@ -45,7 +45,7 @@ stages:
       - data/processed/y_val_feat.npy
 
   model_training:
-    cmd: python src/model_training.py
+    cmd: python3 src/model_training.py
     deps:
       - src/model_training.py
       - data/processed/X_train_feat.npy
@@ -53,12 +53,14 @@ stages:
     params:
       - training.n_estimators
       - training.max_depth
+      - training.min_samples_split
+      - training.min_samples_leaf
       - training.random_state
     outs:
       - data/model/model.pkl
 
   model_evaluation:
-    cmd: python src/model_evaluation.py
+    cmd: python3 src/model_evaluation.py
     deps:
       - src/model_evaluation.py
       - data/model/model.pkl

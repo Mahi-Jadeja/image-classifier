@@ -13,6 +13,8 @@ with open("params.yaml") as f:
 processed_dir = params["processing"]["processed_dir"]
 n_estimators = params["training"]["n_estimators"]
 max_depth = params["training"]["max_depth"]
+min_samples_split = params["training"]["min_samples_split"]
+min_samples_leaf = params["training"]["min_samples_leaf"]
 random_state = params["training"]["random_state"]
 
 
@@ -23,6 +25,8 @@ def train():
     model = RandomForestClassifier(
         n_estimators=n_estimators,
         max_depth=max_depth,
+        min_samples_split=min_samples_split,
+        min_samples_leaf=min_samples_leaf,
         random_state=random_state
     )
 
