@@ -7,3 +7,5 @@ __pycache__/
 *.pyc
 .env
 *.tgz
+venv/.DS_Store
+*/.DS_Store
