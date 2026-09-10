@@ -4,3 +4,7 @@ numpy
 matplotlib
 pillow
 requests
+pyyaml
+requests
+pytest
+urllib3<2

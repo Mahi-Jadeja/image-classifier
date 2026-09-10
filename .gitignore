@@ -9,3 +9,5 @@ __pycache__/
 *.tgz
 venv/.DS_Store
 */.DS_Store
+submission_exp.zip
+mlops_2.pdf
