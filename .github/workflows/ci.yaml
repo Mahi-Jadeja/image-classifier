@@ -28,7 +28,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest numpy Pillow pyyaml requests
+          pip install pytest numpy Pillow pyyaml requests scikit-learn
 
       - name: Run unit tests
-        run: pytest test_pipeline.py -v --maxfail=1
+        # src/ is added to PYTHONPATH so test_pipeline.py can import
+        # data_collection and data_processing without any path hacks
+        run: PYTHONPATH=src pytest test_pipeline.py -v --maxfail=1
